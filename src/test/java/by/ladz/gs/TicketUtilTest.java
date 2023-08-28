@@ -93,9 +93,7 @@ class TicketUtilTest {
 
     @Test
     public void testSelectTicketsForRouteException() {
-        RuntimeException exception = assertThrows(RuntimeException.class, () -> {
-            TicketUtil.selectTicketsForRoute("Москва", "Лондон", sampleTickets);
-        });
+        RuntimeException exception = assertThrows(RuntimeException.class, () -> TicketUtil.selectTicketsForRoute("Москва", "Лондон", sampleTickets));
 
         String expectedErrorMessage = "Не найдено билетов для направления: Москва -> Лондон";
         assertEquals(expectedErrorMessage, exception.getMessage());
